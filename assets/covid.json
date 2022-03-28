@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "covid-symptom-checker-324104",
+  "private_key_id": "07865a66eac8d8ecb688ada224a24d05aca68b74",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDG77t0pNXvE3UP\nwbtU2fJjfyA6Ix+fChnn3QhzJcm/OKs2btRGAv+HdqrjHNE9KIECqBXBoqNRagEg\neXfjAfz1x3hDhiNuUaJ1hiEc8ytrXBXsKUv8MXYBi6x9nY0QNH8z4dRJh02zmKp2\nYfpghbVlxNmpc0nhAGRyQuYJ8ERIJqyB2nzvUhGDQX5CsAX38dfyz21ZmgLdxwns\nYtLPP+412GYUzGUADUS9bk8z8IiCGzXGNbBGEA9B2xBBEX0AcqWFMefagLRcV+Ko\n7B1CKVJiUExHkiwHVpx08Us0q5WJEVPhCMItQTX/OL6T0WrYf8hXOh2w6OdWdC06\nNj+er2XtAgMBAAECggEAVFTwPGRcJHs1FrbjuPajYDZV7Q9SqlLX5Ii4ukd8nMlj\nGzIkXoGK3Vwa2SgwMyLmfb/PaUSOw0aSr7eOcPc4yuACRW2pu2xz2CpCA0m6UEq7\nKF/hTEmTYthZCO8vC32VpuLG4VywPcAsEv856o0D9t5Z/xFWckF+U0m0xuXJrGOp\nFIKXYidS6n7Exfv0bNYCGlRcgFA5GI2eqVZlsevKhVHND0yt/fFWfVHmTRtOyopH\nTBVh4Lp7sMnCnSwZlULluc3jq2p1h6iOCJu0LES/185P/DCZaX0dhgorTTs+nIsD\nZrgovN2kageMGw4c6pFJeVPYb+REFHsqVubSje0iqQKBgQDsrglQ2DuN7gCRrGHY\n22IPKGtG/rvm9Lf0tkvUjvEp7jwGefOLZcNOpIPdeKJOw+fYrDaSW7OM3uvtgQJE\nVn6Eu7lmkv4e/pfcNq/FHxO7k9kUihzE5eMhaVfmEBInUis9wLkLCOSsUhogvPvc\n7fsC9K4v/9Lozxv4TXvbRjem4wKBgQDXLPZO2/XnI6P4LBKgsTUkETqQ3pfFLOic\nJByRVOqQJtc7mj3GW1v/4I5D0LSZx2fHHxOluB67FNYT2dEgXJVbJVNNIZAs7Uai\nh+R3d4lvGtpxRXqoqgGwf232qlp6UwsqnzgJ9BLPKEhD6ubN6hfHxmuyrxIWZ/K6\nXrO1CkaI7wKBgQCTHgcaYp56NaPS6QUVSCDm7SfpxHPGNv2Vti7inEuZ1cUn/Wv+\njS3e13JEGzVAopOd4kY1qZytBvA9/IANPHp+RTYUZXBikbyRnMibThr08QzxsHv7\nhC4v2YxSrFCscm4Af6hGDKwf1RT6np4sER2DE9ambW2LWxm2uWswvK/hIwKBgAmr\nUpIunjk5x8eCK4AfFnU9dPVHm2hX4UgK82GwgC3kIO3ju3zrZBH2hE4V1dfHNymi\ngt6CjJb5k7kmo5ghsPB8l+ayaGksbG0nUCPyMjHU8hX++kkUAqlswINCGni+vJS4\nvOrtld7LP5wVtTNxnonyp6pK5bQuDaFEWiz7fjnvAoGBAKLZL5ANYn5J5Gyv7nIK\nt4NiTsDWIThWJiMfjZiFJ1PAaBp37bGIPnNalQSes6MT5hvGKP8kZCgk1GlAw/Ob\nPOdaLoMATx8xNWHkAVj/T/Rn3b6RmLmdjyHy8hY5shGYYB0sA/PuVfsU3LU+3eMI\nz5W4ZzasAYHDX2y7E43EDQOc\n-----END PRIVATE KEY-----\n",
+  "client_email": "covid-586@covid-symptom-checker-324104.iam.gserviceaccount.com",
+  "client_id": "114407391031067072736",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/covid-586%40covid-symptom-checker-324104.iam.gserviceaccount.com"
+}
