@@ -7,6 +7,8 @@ class DoctorModel {
   final String post;
   final bool audioIcon;
   final bool videoIcon;
+  final String line1;
+  final String line2;
 
   DoctorModel(
       {required this.fullName,
@@ -16,7 +18,9 @@ class DoctorModel {
       required this.review,
       required this.post,
       required this.audioIcon,
-      required this.videoIcon});
+      required this.videoIcon,
+      required this.line1,
+      required this.line2});
 
   DoctorModel.initialState()
       : fullName = "",
@@ -25,6 +29,8 @@ class DoctorModel {
         experience = "",
         review = "",
         post = '',
+        line1 = "",
+        line2 = '',
         audioIcon = false,
         videoIcon = false;
 
@@ -36,6 +42,8 @@ class DoctorModel {
         experience: json["experience"] ?? "",
         review: json["review"] ?? "",
         post: json["post"] ?? "",
+        line1: json["line1"] ?? "",
+        line2: json["line2"] ?? "",
         audioIcon: json["audioIcon"],
         videoIcon: json["videoIcon"]);
   }

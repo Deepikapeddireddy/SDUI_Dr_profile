@@ -58,10 +58,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   bool isLoading = true;
   dynamic responseOptions;
+  var res;
+  // late dynamic optionsFromServer;
 
   getDoctorsList() async {
     final HTTPService _httpService = HTTPService();
     try {
+      var response = await _httpService.getRequest(
+          url:
+              "https://us-central1-soundheart-dev-94cc1.cloudfunctions.net/api/template/get_users?type=column");
+      print("1");
+      print(response);
+      //   dynamic optionsFromServer = EnDynamicJson.fromJson(response);
+
       // var response =
       //     await _httpService.getRequest(url: '/sdui/doctors/doctorslist');
       // print(response);
@@ -71,6 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // response = jsonDecode(response);
       // String response = cardJson;
       setState(() {
+        res = response;
         // responseOptions = EnDynamicJson.fromJson(response);
         isLoading = false;
       });
@@ -81,48 +91,54 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  dynamic optionsFromServer = EnDynamicJson.fromJson({
-    "type": "column",
-    "model": [
-      {
-        "fullName": "Eswara Nadh K",
-        "speciality": "Cardiologist",
-        "likes": "20",
-        "experience": "3",
-        "review": "2",
-        "post": "40",
-        "audioIcon": true,
-        "videoIcon": true,
-      },
-      {
-        "fullName": "Deepika",
-        "speciality": "Dermatologist",
-        "likes": "10",
-        "experience": "3",
-        "review": "2",
-        "post": "40",
-        "audioIcon": true,
-        "videoIcon": false,
-      },
-      {
-        "fullName": "Jithendra",
-        "speciality": "Dermatologist",
-        "likes": "15",
-        "experience": "3",
-        "review": "2",
-        "post": "40",
-        "audioIcon": false,
-        "videoIcon": false,
-      },
-    ],
-    "widget": {
-      "name": "DoctorCardV1",
-      "properties": {
-        "hideCallButton": true,
-        "hideVideoCallButton": true,
-      }
-    }
-  });
+  // dynamic optionsFromServer = EnDynamicJson.fromJson({
+  //   "type": "column",
+  //   "model": [
+  //     {
+  //       "fullName": "Eswara Nadh K",
+  //       "speciality": "Cardiologist",
+  //       "likes": "20",
+  //       "experience": "3",
+  //       "review": "6",
+  //       "post": "40",
+  //       "line1": "Mumbai",
+  //       "line2": "USA",
+  //       "audioIcon": true,
+  //       "videoIcon": true,
+  //     },
+  //     {
+  //       "fullName": "Deepika",
+  //       "speciality": "Dermatologist",
+  //       "likes": "10",
+  //       "experience": "3",
+  //       "review": "4",
+  //       "post": "40",
+  //       "line1": "Hyderabad",
+  //       "line2": "India",
+  //       "audioIcon": true,
+  //       "videoIcon": false,
+  //     },
+  //     {
+  //       "fullName": "Jithendra",
+  //       "speciality": "Dermatologist",
+  //       "likes": "15",
+  //       "experience": "3",
+  //       "review": "2",
+  //       "post": "40",
+  //       "line1": "Delhi",
+  //       "line2": "India",
+  //       "audioIcon": false,
+  //       "videoIcon": false,
+  //     },
+  //   ],
+  //   "widget": {
+  //     "name": "DoctorCardV1",
+  //     "properties": {
+  //       "hideCallButton": true,
+  //       // "hideVideoCallButton": true,
+  //     }
+  //   }
+  // });
 
   @override
   void initState() {
@@ -139,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: isLoading
           ? const Text("Loading")
-          : EnDynamicParser(options: optionsFromServer),
+          : EnDynamicParser(options: EnDynamicJson.fromJson(res)),
     );
   }
 }

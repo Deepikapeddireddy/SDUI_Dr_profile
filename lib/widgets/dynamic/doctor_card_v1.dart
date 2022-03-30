@@ -74,9 +74,9 @@ class DoctorCardV1 extends StatelessWidget {
                                     AppColors.doctorCardHint,
                                     FontStyle.normal,
                                     FontWeight.normal),
-                                children: const [
+                                children: [
                                   TextSpan(
-                                    text: '122',
+                                    text: doctor.likes,
                                     style: TextStyle(
                                       fontWeight: FontWeight.w700,
                                     ),
@@ -172,9 +172,9 @@ class DoctorCardV1 extends StatelessWidget {
                                             AppColors.doctorCardHint,
                                             FontStyle.normal,
                                             FontWeight.normal),
-                                        children: const [
+                                        children: [
                                           TextSpan(
-                                            text: '10',
+                                            text: doctor.experience,
                                             style: TextStyle(
                                               fontWeight: FontWeight.w700,
                                             ),
@@ -214,9 +214,9 @@ class DoctorCardV1 extends StatelessWidget {
                                             AppColors.doctorCardHint,
                                             FontStyle.normal,
                                             FontWeight.normal),
-                                        children: const [
+                                        children: [
                                           TextSpan(
-                                            text: '44',
+                                            text: doctor.review,
                                             style: TextStyle(
                                               fontWeight: FontWeight.w700,
                                             ),
@@ -335,20 +335,3 @@ class DoctorCardV1Properties {
     );
   }
 }
-
-// class DoctorCardV2Properties {
-//   final bool hideCallButton;
-//   final bool hideVideoCallButton;
-
-//   const DoctorCardV2Properties({
-//     this.hideCallButton = false,
-//     this.hideVideoCallButton = false,
-//   });
-
-//   factory DoctorCardV2Properties.fromJson(Map<String, dynamic> json) {
-//     return DoctorCardV2Properties(
-//       hideCallButton: json["hideCallButton"] ?? false,
-//       hideVideoCallButton: json['hideVideoCallButton'] ?? false,
-//     );
-//   }
-// }
