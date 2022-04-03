@@ -1,4 +1,5 @@
 import 'package:en_dynamic_ui/constants/colors.dart';
+import 'package:en_dynamic_ui/utils/redux_model.dart';
 import 'package:flutter/cupertino.dart';
 
 class ReviewModel {
@@ -16,5 +17,14 @@ class ReviewModel {
   factory ReviewModel.fromJson(Map<String, dynamic> json) {
     return ReviewModel(
         name: json["name"], date: json["date"], review: json["review"]);
+  }
+}
+
+class DoctorsReviewsState {
+  ReduxModel list;
+  DoctorsReviewsState({required this.list});
+  DoctorsReviewsState.initialState() : list = ReduxModel.initialState();
+  factory DoctorsReviewsState.fromAnotherState(DoctorsReviewsState another) {
+    return DoctorsReviewsState(list: another.list);
   }
 }

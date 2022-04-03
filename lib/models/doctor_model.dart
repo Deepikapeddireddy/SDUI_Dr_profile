@@ -1,3 +1,5 @@
+import 'package:en_dynamic_ui/utils/redux_model.dart';
+
 class DoctorModel {
   final String fullName;
   final String speciality;
@@ -46,5 +48,14 @@ class DoctorModel {
         line2: json["line2"] ?? "",
         audioIcon: json["audioIcon"],
         videoIcon: json["videoIcon"]);
+  }
+}
+
+class DoctorsListState {
+  ReduxModel list;
+  DoctorsListState({required this.list});
+  DoctorsListState.initialState() : list = ReduxModel.initialState();
+  factory DoctorsListState.fromAnotherState(DoctorsListState another) {
+    return DoctorsListState(list: another.list);
   }
 }

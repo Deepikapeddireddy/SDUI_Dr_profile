@@ -1,9 +1,18 @@
 // ignore_for_file: avoid_unnecessary_containers
 
 import 'package:en_dynamic_ui/makeApiCall.dart';
+import 'package:en_dynamic_ui/middleware/main.dart';
 import 'package:en_dynamic_ui/models/doctor_model.dart';
+import 'package:en_dynamic_ui/store/app_reducer.dart';
+import 'package:en_dynamic_ui/store/app_state.dart';
+import 'package:en_dynamic_ui/utils/error.dart';
+import 'package:en_dynamic_ui/utils/loading.dart';
+import 'package:en_dynamic_ui/utils/redux_model.dart';
 import 'package:en_dynamic_ui/widgets/dynamic/en_dynamic_parser.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
+import 'package:redux_thunk/redux_thunk.dart';
 
 import '../../constants/borders.dart';
 import '../../constants/colors.dart';
@@ -106,8 +115,14 @@ class _DoctorProfileState extends State<DoctorProfile> {
         centerTitle: true,
         leading: IconButton(
           onPressed: () {
+            final _initialState = AppState.initialState();
+            final _store = Store<AppState>(appReducer,
+                initialState: _initialState,
+                middleware: [
+                  thunkMiddleware,
+                ]);
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MyApp()));
+                MaterialPageRoute(builder: (context) => MyApp(store: _store)));
           },
           icon: Icon(Icons.arrow_back_ios),
           color: Colors.white,
@@ -440,9 +455,30 @@ class _DoctorProfileState extends State<DoctorProfile> {
                                     '${widget.doctor.fullName}',
                                 style: BaseStyles.doctorDetailsTextStyle,
                               ),
-                              for (var v in EnDynamicJson.fromJson(res).model)
-                                enDynamicWidgetApplier[
-                                    EnDynamicJson.fromJson(res).widget.name]!(v)
+                              StoreConnector<AppState, ReduxModel>(
+                                converter: ((store) =>
+                                    store.state.doctorReviews.list),
+                                onInit: (store) {
+                                  store.dispatch(getReviews());
+                                },
+                                builder: ((context, data) {
+                                  if (data.loading) return const Loading();
+                                  if (data.error != null)
+                                    return ErrorFeedback(
+                                        message: '${data.error}');
+                                  return Column(
+                                    children: [
+                                      for (var v
+                                          in EnDynamicJson.fromJson(data.data)
+                                              .model)
+                                        enDynamicWidgetApplier[
+                                            EnDynamicJson.fromJson(data.data)
+                                                .widget
+                                                .name]!(v)
+                                    ],
+                                  );
+                                }),
+                              )
                             ],
                           ),
                         ],
